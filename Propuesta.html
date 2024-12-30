@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petición</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .play-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #ff4081;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        z-index: 1000;
+        transition: transform 0.2s ease;
+      }
+
+      .play-btn:hover {
+        transform: scale(1.1);
+      }
+
+      .play-btn i {
+        font-size: 24px;
+        color: #fff;
+      }
+
+      #move-random {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #f44336;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #move-random:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="tenor-gif-embed"
+        data-postid="1353289745118421258"
+        data-share-method="host"
+        data-aspect-ratio="1.26923"
+        data-width="100%"
+      >
+        <a
+          href="https://tenor.com/es-419/view/snoopy-esnupi-snoopy-dance-gif-1353289745118421258"
+          >Snoopy Triste GIF</a
+        >
+        de
+        <a href="https://tenor.com/search/snoopy-gifs">Snoopy GIFs</a>
+      </div>
+      <script
+        type="text/javascript"
+        async
+        src="https://tenor.com/embed.js"
+      ></script>
+
+      <h1>Hola Thais, ¿te podría decir una pregunta? 😎</h1>
+      <p>Por favor, elige una opción:</p>
+
+      <div class="btn">
+        <a href="index.html">Cual</a>
+        <a href="#" id="move-random">No quiero</a>
+      </div>
+      <script src="./script.js"></script>
+    </div>
+
+    <!-- Reproductor de música -->
+    <audio id="background-audio" loop>
+      <source src="./media/audio.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Botón de reproducción -->
+    <button class="play-btn" id="play-button">
+      <i id="play-icon" class="fa fa-play"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      integrity="sha512-abc123..."
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Funcionalidad del botón de reproducción
+      const audio = document.getElementById("background-audio");
+      const playButton = document.getElementById("play-button");
+      const playIcon = document.getElementById("play-icon");
+
+      playButton.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          playIcon.classList.remove("fa-play");
+          playIcon.classList.add("fa-pause");
+        } else {
+          audio.pause();
+          playIcon.classList.remove("fa-pause");
+          playIcon.classList.add("fa-play");
+        }
+      });
+    </script>
+  </body>
+</html>
